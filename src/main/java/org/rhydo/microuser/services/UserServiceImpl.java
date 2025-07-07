@@ -33,13 +33,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponse fetchUser(Long id) {
+    public UserResponse fetchUser(String id) {
         User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
         return modelMapper.map(user, UserResponse.class);
     }
 
     @Override
-    public UserResponse updateUser(Long id, UserRequest updateduserRequest) {
+    public UserResponse updateUser(String id, UserRequest updateduserRequest) {
         User updateduser = modelMapper.map(updateduserRequest, User.class);
 
         return userRepository.findById(id)

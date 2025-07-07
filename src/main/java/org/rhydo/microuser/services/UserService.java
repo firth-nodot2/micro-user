@@ -10,7 +10,7 @@ public interface UserService {
 
     void addUser(UserRequest userRequest);
 
-    UserResponse fetchUser(Long id);
+    UserResponse fetchUser(String id);
 
-    UserResponse updateUser(Long id, UserRequest updateduser);
+    UserResponse updateUser(String id, UserRequest updateduser);
 }
